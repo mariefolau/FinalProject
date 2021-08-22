@@ -9,19 +9,13 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
 
-    <script>
-        * {
-        color: grey;
-        }
-    </script>
-
 </head>
 <body>
 
 <div class="container my-2">
     <h1>Welcome to your planner! </h1>
 
-    <img src="https://c.tenor.com/9xPSu_r3cuMAAAAC/stressed-busy.gif" width="546" height="442.7027027027027" alt="Stressed Busy GIF - Stressed Busy Work GIFs" style="max-width: 546px;"><br></br>
+    <img src="https://c.tenor.com/9xPSu_r3cuMAAAAC/stressed-busy.gif" width="300" height="300" alt="Stressed Busy GIF - Stressed Busy Work GIFs" style="max-width: 546px;"><br></br>
 
 
 
@@ -52,11 +46,11 @@
             <td th:text="${planner.task}"></td>
             <td th:text="${planner.notes}"></td>
             <td> <a th:href="@{/showFormForUpdate/{id}(id=${planner.id})}" class="btn btn-warning">Update</a>
-                <a th:href="@{/deleteTask/{id}(id=${planner.id})}" class="btn btn-danger">Delete</a>
-                <a th:href="@{/completeTasks/{id}(id=${planner.id})}" class="btn btn-success">Complete</a>
-
+                <a th:href="@{/deleteTasks/{id}(id=${planner.id})}" class="btn btn-danger">Delete</a>
+                <a th:href="@{/completeTasks/{id}(id=${planner.id})} == 'complete'" class="btn btn-success">Complete</a>
             </td>
         </tr>
+
         </tbody>
     </table>
 

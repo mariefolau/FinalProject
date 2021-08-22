@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 
+import javax.swing.*;
 import java.util.List;
 
 @Controller
@@ -43,16 +44,17 @@ public class PlannerController {
     }
 
     @GetMapping("/deleteTasks/{id}")
-    public String deleteTask(@PathVariable(value = "id") long id) {
+    public String deleteTasks(@PathVariable(value = "id") long id) {
 
         this.plannerService.deletePlannerById(id);
         return "redirect:/";
     }
 
-    @GetMapping("/completeTasks/{id}")
-    public String completeTask(@PathVariable(value = "id") long id) {
 
-        this.plannerService.completePlannerById(id);
+    @GetMapping("/completeTasks/{id}")
+    public String completeTasks(@PathVariable(value = "id") long id) {
+
+        this.plannerService.deletePlannerById(id);
         return "redirect:/";
     }
 

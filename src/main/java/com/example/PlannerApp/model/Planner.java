@@ -21,7 +21,7 @@ public class Planner {
     private String notes;
 
     @Column(name = "complete")
-    private boolean complete;
+    private boolean complete = true;
 
     public Long getId() {
         return id;
@@ -53,6 +53,6 @@ public class Planner {
 
     public boolean isComplete() { return complete; }
 
-    public void setComplete(boolean complete) { this.complete = complete; }
+    public void setComplete(boolean complete) { this.complete = true; }
 }
 
